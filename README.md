@@ -1,4 +1,4 @@
-# 🚗 ProxiSense
+# ProxiSense
 
 > **Real-Time Pedestrian & Obstacle Intent Prediction for ADAS**
 
@@ -6,17 +6,17 @@ ProxiSense is an edge-ready, real-time perception pipeline designed for Advanced
 
 ---
 
-## ✨ Features
+## Features
 
 | Capability | Details |
 |---|---|
-| 🔍 **Detection** | YOLOv8-nano — fast, lightweight, ONNX-exportable |
-| 🎯 **Tracking** | ByteTrack with Kalman-filter trajectory smoothing |
-| 🧠 **Intent Prediction** | LSTM model classifying 4 intent classes |
-| ⏱️ **TTC Alerts** | Time-To-Collision zones: GREEN / AMBER / RED |
-| 📊 **Dashboard** | Live Streamlit dashboard with charts and alert table |
-| ☁️ **Cloud Sync** | Optional AWS Greengrass telemetry (toggle in config) |
-| 🏎️ **Edge-Ready** | FP16 inference, ONNX Runtime, targets 30 FPS |
+|  **Detection** | YOLOv8-nano — fast, lightweight, ONNX-exportable |
+|  **Tracking** | ByteTrack with Kalman-filter trajectory smoothing |
+|  **Intent Prediction** | LSTM model classifying 4 intent classes |
+|  **TTC Alerts** | Time-To-Collision zones: GREEN / AMBER / RED |
+|  **Dashboard** | Live Streamlit dashboard with charts and alert table |
+|  **Cloud Sync** | Optional AWS Greengrass telemetry (toggle in config) |
+|  **Edge-Ready** | FP16 inference, ONNX Runtime, targets 30 FPS |
 
 ### Intent Classes
 
@@ -29,7 +29,7 @@ ProxiSense is an edge-ready, real-time perception pipeline designed for Advanced
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 ProxiSense/
@@ -69,7 +69,7 @@ ProxiSense/
 
 ---
 
-## ⚙️ Pipeline Architecture
+## Pipeline Architecture
 
 ```
 Video / Webcam
@@ -104,7 +104,7 @@ Video / Webcam
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -136,7 +136,7 @@ Open your browser at **http://localhost:8501** and select an input source (Webca
 
 ---
 
-## 🖥️ CLI Reference
+## CLI Reference
 
 ```
 python main.py [OPTIONS]
@@ -151,7 +151,7 @@ Options:
 
 ---
 
-## 🧠 Training the LSTM Model
+## Training the LSTM Model
 
 ### Option A — Synthetic Data (no dataset required)
 
@@ -178,7 +178,7 @@ The resulting `lstm_intent_best.onnx` file will be picked up automatically by th
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 All parameters are in [`config/config.yaml`](config/config.yaml):
 
@@ -215,7 +215,7 @@ cloud:
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 | Package | Purpose |
 |---|---|
@@ -231,7 +231,7 @@ cloud:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Smoke-test the full pipeline on a sample video
@@ -240,7 +240,7 @@ python scripts/test_pipeline.py
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Transformer-based intent predictor
 - [ ] CARLA Simulator integration (live telemetry)
