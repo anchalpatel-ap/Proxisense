@@ -1,0 +1,32 @@
+# ProxiSense - Real-Time Pedestrian & Obstacle Intent Prediction for ADAS
+
+# Core ML & CV
+ultralytics>=8.0.0          # YOLOv8 model
+torch>=1.13.0               # PyTorch (used for training LSTM)
+torchvision>=0.14.0
+onnx>=1.14.0                # ONNX export
+onnxruntime>=1.15.0         # ONNX Runtime (edge inference)
+
+# Tracking
+opencv-python>=4.8.0        # Video I/O, image processing
+opencv-contrib-python>=4.8.0
+numpy>=1.24.0
+
+# Dashboard
+streamlit>=1.28.0           # Real-time dashboard
+Pillow>=10.0.0              # Image handling
+altair>=5.0.0               # Charts
+
+# Utilities
+scipy>=1.10.0               # TTC calculations, interpolation
+scikit-learn>=1.3.0         # Preprocessing, metrics
+pyyaml>=6.0                 # Config parsing
+tqdm>=4.65.0                # Progress bars
+psutil>=5.9.0               # System resource monitoring
+
+# Cloud (optional)
+boto3>=1.28.0               # AWS SDK
+
+# Tracking
+lap>=0.4.0                  # Linear Assignment for ByteTrack
+filterpy>=1.4.5             # Kalman filters for tracking

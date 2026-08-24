@@ -1,0 +1,50 @@
+# ProxiSense .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Models (downloaded, not committed)
+models/detection/*.pt
+models/detection/*.onnx
+models/prediction/*.pt
+models/prediction/*.onnx
+
+# Data
+data/sample_videos/*.mp4
+data/sample_videos/*.avi
+data/datasets/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Config with secrets
+config/aws_credentials.yml
+config/*.secret.yaml
+
+# Coverage
+htmlcov/
+.coverage

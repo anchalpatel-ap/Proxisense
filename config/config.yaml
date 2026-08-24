@@ -1,0 +1,49 @@
+# ProxiSense Configuration
+
+model:
+  detection:
+    name: "yolov8n"           # YOLOv8-nano for edge
+    conf_threshold: 0.45       # Slightly lower to compensate for smaller resolution
+    iou_threshold: 0.45        # NMS IoU threshold
+    input_size: [320, 320]     # 320x320 = ~4x faster than 640x640 on CPU
+    half_precision: false      # FP16 requires GPU — disabled for CPU
+
+  prediction:
+    type: "lstm"               # LSTM or transformer
+    input_len: 15              # Number of past frames for trajectory
+    predict_len: 10            # Number of future frames to predict
+    hidden_size: 64
+    num_layers: 2
+    dropout: 0.2
+    confidence_threshold: 0.75 # Min confidence to trigger alert
+    classes:
+      0: "STATIONARY"
+      1: "WILL_CROSS"
+      2: "ERRATIC"
+      3: "LANE_CHANGE"
+
+tracking:
+  method: "bytetrack"          # bytetrack or deepsort
+  max_lost: 30                 # Frames to keep lost track
+  track_thresh: 0.5
+  match_thresh: 0.8
+
+alert:
+  ttc_thresholds:
+    green: 8.0                 # Safe (seconds)
+    amber: 4.0                 # Caution
+    red: 2.0                   # Immediate danger
+  braking_signal_threshold: 2.0
+
+pipeline:
+  max_fps: 30
+  display: true
+  record_output: false
+  output_path: "outputs/"
+
+cloud:
+  enabled: false               # Toggle AWS Greengrass sync
+  greengrass:
+    thing_name: "proxisense_01"
+    region: "ap-south-1"
+    topic: "proxisense/anomalies"
